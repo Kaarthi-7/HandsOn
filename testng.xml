@@ -4,16 +4,10 @@
 	<listeners>
 		<listener class-name="utilities.ExtentReportManager" />
 	</listeners>
-	<parameter name="browser" value="Edge"></parameter>
+	<parameter name="browser" value="Chrome"></parameter>
 	<test name="Edge">
-		<groups>
-			<run>
-				<!-- <include name="smoke" /> -->
-				<include name="regression" />
-			</run>
-		</groups>
 		<classes>
-			<class name="testNGTestCases.SignInPage" />
+			<class name="testNGTestCases.TC05_VerifyCartFunctionality" />
 		</classes>
 	</test>
 </suite>
