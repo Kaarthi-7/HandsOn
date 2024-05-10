@@ -4,7 +4,7 @@
 	<listeners>
 		<listener class-name="utilities.ExtentReportManager" />
 	</listeners>
-	<parameter name="browser" value="Chrome"></parameter>
+	<parameter name="browser" value="Edge"></parameter>
 	<test name="Edge">
 		<classes>
 			<class name="testNGTestCases.TC05_VerifyCartFunctionality" />

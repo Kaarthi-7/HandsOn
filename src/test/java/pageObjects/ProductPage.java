@@ -17,6 +17,9 @@ public class ProductPage extends BasePage{
 	@FindBy(xpath = "//div[@class='pf-col xs-6 sm-3 clip-product-card-wrapper marginBottom-12 ng-star-inserted']")
 	WebElement product;
 	
+	@FindBy(xpath = "//div[@class='product-price']/span")
+	List <WebElement> ProductPrice;
+	
 	@FindBy(xpath = "//div[@class='product-card-wishlist']")
 	WebElement AddtoWishlist;
 	
@@ -31,10 +34,6 @@ public class ProductPage extends BasePage{
 	
 	@FindBy(xpath = "//h3[@class='product-name color-tertiary text-md font-medium ng-star-inserted']")
 	WebElement productName;
-	
-	public boolean VerifySearch() {
-		return product.isDisplayed();
-	}
 	
 	public void clickOnSort() {
 		dropdownmenu.click();
@@ -65,5 +64,17 @@ public class ProductPage extends BasePage{
 		ProductName = productName.getText();
 		return ProductName;
 	}
-
+	
+	public int prodprice() {
+		for(int i=0; i<3; i++) {
+			String prod1priceString = ProductPrice.get(i).getText().replaceAll("[^0-9]", "");
+			String prod2priceString = ProductPrice.get(i+1).getText().replaceAll("[^0-9]", "");
+			int prod1price = Integer.parseInt(prod1priceString);
+			int prod2price = Integer.parseInt(prod2priceString);
+			if(prod1price > prod2price) {
+				count++;
+			}
+		}
+		return count;
+	}
 }

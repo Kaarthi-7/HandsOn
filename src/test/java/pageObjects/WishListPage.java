@@ -16,11 +16,18 @@ public class WishListPage extends BasePage{
 	@FindBy(xpath = "//a[@class='ck-oc-slider-card-atw-link active']")
 	WebElement RemoveFromWishList;
 	
+	@FindBy(xpath = "//div[@class='wishlistContainer']/div/div[2]/div/h4[2]")
+	WebElement emptyMsg;
+	
 	public String productname() {
 		return productName.getText();
 	}
 	
 	public void removeProductFromWishlist() {
 		RemoveFromWishList.click();
+	}
+	
+	public String message() {
+		return emptyMsg.getText();
 	}
 }

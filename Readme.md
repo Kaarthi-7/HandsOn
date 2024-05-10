@@ -1,55 +1,45 @@
-Overview - Identify New Bikes
+Overview - PepperFry.com
 ----------------------------------
-This project aims to automate the search of upcoming bikes using Selenium WebDriver.                                        
-It uses ZigWheels website, extracting User Information and Latest News Information.
+This project aims to automate the testing of various functionality of the pepperfry.com website.
+This project contains the automation of five functionality like log in, search, sorting product, adding to cart and addint to wishlist,
 
 ----------------------------------
 Libraries and Dependencies
 ----------------------------------
-Maven Repository: Maven 3.12.1
+Maven Repository: Maven 3.12.0
 
 Apache POI: 5.2.5
 
-TestNG: 7.9.0
+TestNG: 7.10.2
 
 Extent Report: 5.1.1
 
-Selenium WebDriver: 4.17.0
+Selenium WebDriver: 4.20.0
 
-Cucumber: 7.15.0
+Cucumber: 7.17.0
 
 ----------------------------------
 Automation Flow
 ----------------------------------
-1.Navigate to the ZigWheels website
+1.Navigate to the pepperfry website
 
-2.In the menu bar, Hover to new bikes then click upcoming bikes
+2.logging into pepperfry website using valid credentials
 
-3.select the brand as "HONDA"
+3.click on search box and enter "Office Chair" as search keyword and click enter
 
-4.scroll the webpage upto the load more button is visible
+4.sort the products using highest price first
 
-5.click on load more
+5.add the first product into wishlist
 
-6.get the details of upcoming bikes within the price range of 4 lakh 
+6.navigate to wishlist and verify the product added correctly then remove the product
 
-7.Navigate back to the homepage
+7.Navigate back to the product page and click on first product
 
-8.In the menu bar, Hover to used cars then click chennai
+8.add the product to the cart
 
-9.scroll webpage upto the popular models of used car is visible
+9.navigate to cart and verify the product added correctly then remove the product
 
-10.get the details of popular models of car
-
-12.Navigate back to the homepage
-
-13.click on login
-
-14.click on google
-
-15. give a wrong mail id then click next
-
-16. capture the error message
+10.finally close the browser and report is genearted
 
 ---------------------------------
 Challenges

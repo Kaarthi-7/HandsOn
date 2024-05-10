@@ -24,6 +24,9 @@ public class PepperFryHomePage extends BasePage {
 	@FindBy(id = "search")
 	WebElement SearchInput;
 	
+	@FindBy(xpath = "//div[@class='hd-loggedIn-state']/div/div")
+	WebElement username;
+	
 	public boolean pageLogo() {
 		return PepperFryLogo.isDisplayed();
 	}
@@ -42,5 +45,12 @@ public class PepperFryHomePage extends BasePage {
 	
 	public void searchproduct() {
 		SearchInput.sendKeys(Keys.ENTER);
+	}
+	
+	public void VerifyLogin() {
+		String usernameText = username.getText();
+		if(usernameText.contains("Hi,")) {
+			System.out.println("Logged In Successfully");
+		}
 	}
 }

@@ -11,10 +11,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtilities {
 
-public void write(int rowno,int colno,String data) throws IOException {
+public static void write(String Sheet, int rowno,String data) throws IOException {
 		
 		// Opening the excel file 
-		String sheetName = "Output";
+		String sheetName = Sheet;
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"/Reports/ExcelOutput.xlsx");
 		XSSFWorkbook book = new XSSFWorkbook(file);
 		
@@ -29,7 +29,7 @@ public void write(int rowno,int colno,String data) throws IOException {
 		}
 		XSSFRow row = sheet.getRow(rowno);
 		
-		XSSFCell cell = row.createCell(colno);
+		XSSFCell cell = row.createCell(0);
 		
 		cell.setCellValue(data);
 		

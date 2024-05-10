@@ -21,6 +21,9 @@ public class CartPage extends BasePage {
 	@FindBy(id = "ck-card-remove-move-wishlist")
 	WebElement removeconfirmation;
 	
+	@FindBy(xpath = "//div[@class='empty-cart-page-container text-center container']/div")
+	WebElement emptyMsg;
+	
 	public String productName() {
 		return productName.getText();
 	}
@@ -33,5 +36,9 @@ public class CartPage extends BasePage {
 	public void removeConfirmation() {
 		BaseClass.getDriver().switchTo().activeElement();
 		removeconfirmation.click();
+	}
+	
+	public String empty() {
+		return emptyMsg.getText();
 	}
 }
